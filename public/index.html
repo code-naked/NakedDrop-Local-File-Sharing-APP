@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NakedDrop - Local File Sharing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1>NakedDrop</h1>
+        <p class="subtitle">Share files on you Wi-Fi between devices.</p>
+        
+        <div class="address-box">
+            <span>Open this on other devices:</span>
+            <code id="address"></code>
+        </div>
+
+        <div class="device-row">
+            <label >
+                Your device name:
+
+                <input type="text" id="deviceName" placeholder="e.g. CodeNaked or Phone">
+            </label>
+        </div>
+
+        <div class="drop-area" id="dropArea">
+            <p>Click or drop files here to share</p>
+            <input type="file" id="fileInput" multiple hidden />
+            <button id="selectBtn">Select Files</button>
+        </div>
+
+        <div id="status" class="status"></div>
+
+        <h2>Available files</h2>
+
+        <div id="filesList" class="files-list">
+            <!--This will be filled by the JS-->
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
